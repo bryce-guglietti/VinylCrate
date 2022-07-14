@@ -1,9 +1,11 @@
 <?php 
     include_once 'header.php';
+    require_once 'includes/dbh.inc.php';
+    require_once 'includes/functions.inc.php';
 ?>
         <div class="center" id = "myForm">
             <h1>Add Record to Library</h1>
-            <form action="library.php" method= "POST" autocomplete="off">
+            <form action="includes/newvinyl.inc.php" method= "post" autocomplete = "off">
                 <div class="txt_field">
                     <input type = "text" name = "artist" required>
                     <span></span>
@@ -24,21 +26,22 @@
                     <span></span>
                     <label>Rating</label> 
                 </div>
-                <button type= "submit" name = "submit">Submit</button>
+                <?php 
+                    if (isset($_SESSION["useruid"])){
+                        $userid = $_SESSION['usersid'];
+                    }             
+                ?>
+                <input type = "hidden" name = "userid" value = <?php echo $userid; ?>>
+
+                <button type= "submit" name = "submitvinyl">Submit</button>
                 
                 <button type = "reset" name = "reset">Clear Form</button>
 
-                <button type = "menu" name = "close" onclick="closeForm()">Close</button>
+                <a href="albums.php" name = "gobackalbum" class="button">Back</a>
+
 
             </form>
 
-        </div>
-        <div class = "opening-scene">
-            <h1>Bryce's Records</h1>
-            <button type = "menu" class= "open-button" name = "addRec" onclick="openForm()">Add A Record</button>
-            <form action="library.php" method="POST">
-                <button class= "records-button"type = "submit" name = "GET">Get Records</button>
-            </form>
         </div>
         </div>
     </body>
