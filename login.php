@@ -15,7 +15,7 @@
                     <span></span>
                     <label>Password</label> 
                 </div>
-                <button type="submit" name = "submit">Log In</button>
+                <button type="submit" name = "submitlogin">Log In</button>
             </form>
         </div>
         <?php 
