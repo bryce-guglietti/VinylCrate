@@ -16,11 +16,9 @@ require_once 'includes/functions.inc.php';
                 ?>
             </section>
             <section class="album-b">
-                <button type="submit" name="sortyear">Sort By Year</button>
-                <button type="submit" name="sortartist">Sort By Artist</button>
-                <script>
-                    <input type="button" onclick="location.href='newvinyl.php';" value = "Add an Album"/>
-                </script>
+                <a href="newvinyl.php" name = "addalbum" class="button">Add an Album</a>
+                <a href="removealbum.php" name = "removealbum" class="button">Remove an Album</a>
+
 
             </section>
             <section class="albums">
